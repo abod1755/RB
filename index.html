@@ -1,50 +1,86 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>تثبيت RiyadSoftToken</title>
+  <meta charset="UTF-8">
+  <title>تحميل RiyadSoftToken</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f5f5f5;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
       text-align: center;
-      padding: 50px;
-    }
-    .container {
-      background-color: white;
       padding: 40px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      display: inline-block;
     }
+
+    .container {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      display: inline-block;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
     h1 {
       color: #005c9c;
     }
-    p {
-      font-size: 18px;
-      color: #333;
-    }
-    .install-btn {
-      display: inline-block;
+
+    .btn-row {
       margin-top: 30px;
-      padding: 15px 30px;
-      background-color: #005c9c;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      font-size: 18px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
     }
-    .install-btn:hover {
-      background-color: #004a80;
+
+    .download-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 25px;
+      border-radius: 10px;
+      font-size: 18px;
+      text-decoration: none;
+      color: white;
+      width: 220px;
+      transition: 0.3s;
+    }
+
+    .ios {
+      background-color: #005c9c;
+    }
+
+    .android {
+      background-color: #34a853;
+    }
+
+    .download-btn:hover {
+      opacity: 0.9;
+    }
+
+    .download-btn img {
+      height: 24px;
+      margin-left: 10px;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>تثبيت RiyadSoftToken</h1>
-    <p>اضغط على الزر أدناه لتثبيت التطبيق على جهازك.</p>
-    <a class="install-btn" href="itms-services://?action=download-manifest&url=https://abod1755.github.io/RB/manifest.plist">تثبيت التطبيق</a>
+    <h1>تحميل تطبيق RiyadSoftToken</h1>
+    <p>يرجى اختيار نظام التشغيل المناسب لجهازك</p>
+
+    <div class="btn-row">
+      <!-- iOS button -->
+      <a class="download-btn ios" href="itms-services://?action=download-manifest&url=https://abod1755.github.io/RB/manifest.plist">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/31/Apple_logo_white.svg" alt="iOS">
+        تحميل لـ iOS
+      </a>
+
+      <!-- Android button -->
+      <a class="download-btn android" href="https://yourdomain.com/app-release.apk">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Android_robot.svg" alt="Android">
+        تحميل لـ Android
+      </a>
+    </div>
   </div>
 </body>
 </html>
