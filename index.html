@@ -6,26 +6,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
+      font-family: "Tahoma", sans-serif;
+      background-color: #f5f5f5;
       text-align: center;
-      padding: 40px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      background-color: #005c9c;
+      padding: 20px;
+    }
+
+    .header img {
+      height: 60px;
     }
 
     .container {
-      background-color: #fff;
       padding: 30px;
-      border-radius: 10px;
-      display: inline-block;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
     h1 {
       color: #005c9c;
+      margin-top: 20px;
+    }
+
+    p {
+      font-size: 18px;
+      color: #333;
+      margin-bottom: 30px;
     }
 
     .btn-row {
-      margin-top: 30px;
       display: flex;
       justify-content: center;
       gap: 20px;
@@ -37,7 +49,7 @@
       align-items: center;
       justify-content: center;
       padding: 15px 25px;
-      border-radius: 10px;
+      border-radius: 8px;
       font-size: 18px;
       text-decoration: none;
       color: white;
@@ -53,17 +65,31 @@
       background-color: #34a853;
     }
 
-    .download-btn:hover {
-      opacity: 0.9;
-    }
-
     .download-btn img {
       height: 24px;
       margin-left: 10px;
     }
+
+    .footer {
+      margin-top: 60px;
+      color: #888;
+      font-size: 14px;
+    }
+
+    @media (max-width: 500px) {
+      .download-btn {
+        width: 100%;
+      }
+    }
   </style>
 </head>
 <body>
+
+  <!-- شعار بنك الرياض -->
+  <div class="header">
+    <img src="https://www.riyadbank.com/etc/designs/riyadbank/clientlibs/clientlib-base/img/logo.svg" alt="شعار بنك الرياض">
+  </div>
+
   <div class="container">
     <h1>تحميل تطبيق RiyadSoftToken</h1>
     <p>يرجى اختيار نظام التشغيل المناسب لجهازك</p>
@@ -81,6 +107,11 @@
         تحميل لـ Android
       </a>
     </div>
+
+    <div class="footer">
+      © بنك الرياض 2025
+    </div>
   </div>
+
 </body>
 </html>
