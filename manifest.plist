@@ -12,9 +12,7 @@
           <key>kind</key>
           <string>software-package</string>
           <key>url</key>
-          <!-- اختر السطر المناسب حسب اسم ملفك -->
           <!-- https://abod1755.github.io/RB/RiyadbankSG.ipa -->
-          <!-- أو https://abod1755.github.io/RB/Riyadbank%20SG.ipa -->
           <string>https://abod1755.github.io/RB/RiyadbankSG.ipa</string>
         </dict>
       </array>
