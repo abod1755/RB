@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
-"http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+  "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
   <key>items</key>
@@ -12,15 +12,18 @@
           <key>kind</key>
           <string>software-package</string>
           <key>url</key>
+          <!-- اختر السطر المناسب حسب اسم ملفك -->
+          <!-- https://abod1755.github.io/RB/RiyadbankSG.ipa -->
+          <!-- أو https://abod1755.github.io/RB/Riyadbank%20SG.ipa -->
           <string>https://abod1755.github.io/RB/RiyadbankSG.ipa</string>
         </dict>
       </array>
       <key>metadata</key>
       <dict>
         <key>bundle-identifier</key>
-        <string>com.riyadbank.authenticator.uat</string>
+        <string>com.riyadbank.emp.authenticator.uat</string>
         <key>bundle-version</key>
-        <string>1.2</string>
+        <string>1.2.8</string>
         <key>kind</key>
         <string>software</string>
         <key>title</key>
