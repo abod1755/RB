@@ -17,9 +17,9 @@
             <key>metadata</key>
             <dict>
                 <key>bundle-identifier</key>
-                <string>com.riyadbank.emp.authenticator.uat</string>
+                <string>com.riyadbank.authenticator.uat</string>
                 <key>bundle-version</key>
-                <string>1.4</string>
+                <string>1.0</string>
                 <key>kind</key>
                 <string>software</string>
                 <key>title</key>
