@@ -18,13 +18,13 @@
       <key>metadata</key>
       <dict>
         <key>bundle-identifier</key>
-        <string>com.riyadbank.authenticator.uat</string>
+        <string>com.riyadbank.emp.authenticator</string>
         <key>bundle-version</key>
-        <string>1.2</string>
+        <string>1.0</string>
         <key>kind</key>
         <string>software</string>
         <key>title</key>
-        <string>RiyadSoftToken</string>
+        <string>Riyadbank SG</string>
       </dict>
     </dict>
   </array>
