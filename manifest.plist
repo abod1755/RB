@@ -12,8 +12,7 @@
           <key>kind</key>
           <string>software-package</string>
           <key>url</key>
-          <!-- https://abod1755.github.io/RB/RiyadbankSG.ipa -->
-          <string>https://abod1755.github.io/RB/RiyadbankSG.ipa</string>
+          <string>https://raw.githubusercontent.com/abod1755/RB/main/RB.ipa</string>
         </dict>
       </array>
       <key>metadata</key>
