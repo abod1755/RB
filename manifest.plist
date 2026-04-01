@@ -13,3 +13,33 @@
 					<key>url</key>
 					<string>https://raw.githubusercontent.com/abod1755/RB/main/RiyadbankSG.ipa</string>
 				</dict>
+				<dict>
+					<key>kind</key>
+					<string>display-image</string>
+					<key>url</key>
+					<string>https://raw.githubusercontent.com/abod1755/RB/main/icon-120.png</string>
+				</dict>
+				<dict>
+					<key>kind</key>
+					<string>full-size-image</string>
+					<key>url</key>
+					<string>https://raw.githubusercontent.com/abod1755/RB/main/icon-512.png</string>
+				</dict>
+			</array>
+			<key>metadata</key>
+			<dict>
+				<key>bundle-identifier</key>
+				<string>com.riyadbank.sg</string>
+				<key>bundle-version</key>
+				<string>1.0</string>
+				<key>kind</key>
+				<string>software</string>
+				<key>platform-identifier</key>
+				<string>com.apple.mobileprovision</string>
+				<key>title</key>
+				<string>Riyad Bank SG</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>
