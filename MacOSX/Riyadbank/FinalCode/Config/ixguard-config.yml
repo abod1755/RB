@@ -1,0 +1,307 @@
+obfuscation:
+  enabled: true
+  targets:
+    - classes: "Riyadbank.**"
+      methods: "*"
+      fields: "*"
+    - classes: "Riyadbank.AuthenticationManager"
+      exclude-methods:
+        - "init()"
+        - "requireAuthentication(on:completion:)"
+        - "authenticateWithBiometrics(on:completion:)"
+        - "appDidBecomeActive()"
+    - classes: "Riyadbank.OTPManger"
+      exclude-methods:
+        - "generateOTP()"
+        - "getRemainingTime()"
+        - "updateOTP()"
+    - classes: "Riyadbank.RChangePin"
+      exclude-methods:
+        - "changePin(newPin:oldPin:)"
+        - "verifyPin(pin:)"
+    - classes: "Riyadbank.EncryptionHelper"
+      exclude-methods:
+        - "init()"
+        - "encrypt(_:)"
+        - "decrypt(_:)"
+        - "generateRandomData(length:)"
+        - "saveToKeychain(data:tag:)"
+        - "loadFromKeychain(tag:)"
+    - classes: "Riyadbank.FourDigitViewController"
+      exclude-methods:
+        - "viewDidLoad()"
+        - "textField(_:shouldChangeCharactersIn:replacementString:)"
+        - "authenticateWithBiometrics(biometricType:)"
+        - "checkBiometricAvailabilityAndAuthenticate()"
+        - "saveEncryptedPin(_:)"
+        - "verifyPin(_:)"
+        - "isValidPin(_:)"
+        - "submitButtonTapped()"
+        - "transitionToMainTabBar()"
+        - "setupBackground()"
+        - "setupUI()"
+        - "showPinRulesAlert()"
+        - "updateUIForState()"
+        - "showBiometricOptions(supportsFaceID:supportsTouchID:)"
+        - "showAlert(title:message:)"
+    - classes: "Riyadbank.MainTabBarController"
+      exclude-methods:
+        - "init()"
+        - "init(nibName:bundle:)"
+        - "viewDidLoad()"
+        - "touchesBegan(_:with:)"
+        - "startInactivityTimer()"
+        - "resetInactivityTimer()"
+        - "invalidateInactivityTimer()"
+        - "handleInactivityTimeout()"
+        - "isDebuggerAttached()"
+        - "showDebuggerAlert()"
+        - "isJailbroken()"
+        - "showJailbreakAlert()"
+        - "preventScreenshot()"
+        - "secureWindow()"
+        - "setupViewControllers()"
+        - "createHomeViewController(isArabic:)"
+        - "createSettingsViewController(isArabic:)"
+        - "createIcon(systemName:fallbackName:)"
+        - "tabBarController(_:didSelect:)"
+        - "deinit()"
+    - classes: "Riyadbank.CustomTabBar"
+      exclude-methods:
+        - "sizeThatFits(_:)"
+        - "safeAreaInsets"
+        - "layoutSubviews()"
+    - classes: "Riyadbank.UIViewController"
+      exclude-methods:
+        - "setupBottomNavbar()"
+        - "homeButtonTapped()"
+        - "setupNavigationBar(title:)"
+        - "openSettings()"
+    - classes: "Riyadbank.TokenDeleteRecord"
+      exclude-methods:
+        - "init(tokenName:serialNumber:activationCode:savedOTP:)"
+        - "viewDidLoad()"
+        - "Deletetoken()"
+        - "performTokenDeletion(_:)"
+        - "generateOTP()"
+        - "updateCountdownProgress(sender:)"
+        - "showAlert(title:message:)"
+        - "deinit()"
+    - classes: "Riyadbank.SettingsViewController"
+      exclude-methods:
+        - "init()"
+        - "init(nibName:bundle:)"
+        - "viewDidLoad()"
+        - "setupSettingsOptions()"
+        - "setupArabicButton()"
+        - "updateBiometricButtonTitle()"
+        - "addTokenButtonTapped()"
+        - "arabicLanguageChange(_:)"
+        - "restartAppWithNewLanguage()"
+        - "forgetpassword()"
+        - "tokenButtonTapped(_:)"
+        - "loadSavedData(tokenName:serialNumber:activationCode:savedOTP:)"
+        - "toggleBiometrics()"
+        - "showAlert(title:message:)"
+    - classes: "Riyadbank.startViewController"
+      exclude-methods:
+        - "init()"
+        - "init(nibName:bundle:)"
+        - "viewDidLoad()"
+        - "showSavedTokens(on:)"
+        - "tokenButtonTapped(_:)"
+        - "addTokenButtonTapped()"
+    - classes: "Riyadbank.AppDelegate"
+      exclude-methods:
+        - "application(_:didFinishLaunchingWithOptions:)"
+        - "application(_:configurationForConnecting:options:)"
+        - "application(_:didDiscardSceneSessions:)"
+    - classes: "Riyadbank.SceneDelegate"
+      exclude-methods:
+        - "scene(_:willConnectTo:options:)"
+        - "sceneDidDisconnect(_:)"
+        - "sceneDidBecomeActive(_:)"
+        - "sceneWillResignActive(_:)"
+        - "sceneWillEnterForeground(_:)"
+        - "sceneDidEnterBackground(_:)"
+    - classes: "Riyadbank.StExampleViewController"
+      exclude-methods:
+        - "viewDidLoad()"
+        - "setSDKVersion()"
+        - "checkCodes()"
+        - "invalidCodes()"
+        - "updateCountdownProgress(sender:)"
+        - "textFieldShouldReturn(_:)"
+        - "handleTextFieldValueChanged(_:)"
+    - classes: "EntrustIGMobile.ETIdentity"
+      exclude-methods:
+        - "getOTP(_:)"
+    - classes: "Riyadbank.forgetuserViewController"
+      exclude-methods:
+        - "viewDidLoad()"
+        - "textField(_:shouldChangeCharactersIn:replacementString:)"
+        - "saveEncryptedPin(_:)"
+        - "verifyPin(_:)"
+        - "isValidPin(_:)"
+        - "submitButtonTapped()"
+    - classes: "Riyadbank.HelpUsViewController"
+      exclude-methods:
+        - "viewDidLoad()"
+        - "handleTap(_:)"
+    - classes: "Riyadbank.RIYADTOKENReinitializepinViewController"
+      exclude-methods:
+        - "viewDidLoad()"
+    - classes: "Riyadbank.RIYADTOKENChangepinViewController"
+      exclude-methods:
+        - "viewDidLoad()"
+    - classes: "Riyadbank.RIYADTOKENForgetpinViewController"
+      exclude-methods:
+        - "viewDidLoad()"
+    - classes: "Riyadbank.RIYADTOKENUsepinViewController"
+      exclude-methods:
+        - "viewDidLoad()"
+    - classes: "Riyadbank.RIYADTOKENUseViewController"
+      exclude-methods:
+        - "viewDidLoad()"
+    - classes: "Riyadbank.RiyadBankViewController"
+      exclude-methods:
+        - "viewDidLoad()"
+        - "tokenButtonTapped(_:)"
+        - "tokenButtonTappedusepin(_:)"
+        - "tokenButtonTappedchangepin(_:)"
+        - "tokenButtonTappedforgetpin(_:)"
+        - "tokenButtonTappedReinitializepin(_:)"
+    - classes: "Riyadbank.CallUsViewController"
+      exclude-methods:
+        - "viewDidLoad()"
+        - "handlePhoneBanking()"
+        - "handleVIPPhoneBanking()"
+        - "handleEmail()"
+    - classes: "Riyadbank.NewSoftTokenViewController"
+      exclude-methods:
+        - "viewDidLoad()"
+        - "setupKeyboardObservers()"
+        - "keyboardWillShow(notification:)"
+        - "keyboardWillHide(notification:)"
+        - "dismissKeyboard()"
+        - "setupStepProgressIndicator(on:)"
+        - "setupInputFields(on:)"
+        - "setupNextButton(on:)"
+        - "createTextField(placeholder:)"
+        - "textField(_:shouldChangeCharactersIn:replacementString:)"
+        - "formatActivationCode(_:)"
+        - "buttonTapped()"
+        - "updateStepUI()"
+        - "updateStepProgressIndicator(to:)"
+        - "openCameraForQRCode()"
+        - "setupCaptureSession()"
+        - "metadataOutput(_:didOutput:from:)"
+        - "ScanQRCode()"
+        - "handleQRScannedData(qrData:)"
+        - "showPasswordDialog(qrData:)"
+        - "decryptSecureQR(password:qrData:)"
+        - "generateOTP()"
+        - "updateCountdownProgress(sender:)"
+        - "manageOTPCountdown(identity:lastOtpUpdate:otpLabel:otpCountdown:serialNumber:)"
+        - "checknameoftoken()"
+        - "datasave()"
+        - "loadSavedData(tokenName:serialNumber:activationCode:savedOTP:)"
+        - "invalidCodes()"
+        - "checkCodes()"
+        - "showAlert(message:)"
+        - "showAlert1(title:message:)"
+    - classes: "Riyadbank.MoreViewController"
+      exclude-methods:
+        - "viewDidLoad()"
+        - "handleHelpAction()"
+        - "handleCallUsAction()"
+    - classes: "Riyadbank.TokenListViewController"
+      exclude-methods:
+        - "init(tokenName:serialNumber:activationCode:savedOTP:)"
+        - "init?(coder:)"
+        - "viewDidLoad()"
+        - "Deletetoken()"
+        - "performTokenDeletion(_:)"
+        - "showAlert(title:message:)"
+        - "manageOTPCountdown(identity:lastOtpUpdate:otpLabel:otpCountdown:serialNumber:)"
+    - classes: "Riyadbank.HomeScreenViewController"
+      exclude-methods:
+        - "viewDidLoad()"
+        - "buttonTapped()"
+        - "settingsTapped()"
+  symbol-renaming:
+    mode: random
+  string-encryption:
+    enabled: true
+    targets:
+      - "Riyadbank.AuthenticationManager"
+      - "Riyadbank.OTPManger"
+      - "Riyadbank.EncryptionHelper"
+      - "Riyadbank.RChangePin"
+      - "Riyadbank.FourDigitViewController"
+      - "Riyadbank.TokenDeleteRecord"
+      - "Riyadbank.forgetuserViewController"
+      - "Riyadbank.HelpUsViewController"
+      - "Riyadbank.RIYADTOKENReinitializepinViewController"
+      - "Riyadbank.RIYADTOKENChangepinViewController"
+      - "Riyadbank.RIYADTOKENForgetpinViewController"
+      - "Riyadbank.RIYADTOKENUsepinViewController"
+      - "Riyadbank.RIYADTOKENUseViewController"
+      - "Riyadbank.RiyadBankViewController"
+      - "Riyadbank.CallUsViewController"
+      - "Riyadbank.NewSoftTokenViewController"
+      - "Riyadbank.MoreViewController"
+      - "Riyadbank.TokenListViewController"
+      - "Riyadbank.HomeScreenViewController"
+      - "Riyadbank.CustomTabBar"
+      - "Riyadbank.UIViewController"
+      - "Riyadbank.SettingsViewController"
+      - "Riyadbank.startViewController"
+      - "Riyadbank.AppDelegate"
+      - "Riyadbank.SceneDelegate" # Added for string encryption
+      - "Riyadbank.StExampleViewController" # Added for string encryption
+  control-flow-obfuscation:
+    enabled: true
+    complexity: medium
+    targets:
+      - "Riyadbank.FourDigitViewController"
+      - "Riyadbank.TokenDeleteRecord"
+      - "Riyadbank.forgetuserViewController"
+      - "Riyadbank.HelpUsViewController"
+      - "Riyadbank.CallUsViewController"
+      - "Riyadbank.NewSoftTokenViewController"
+      - "Riyadbank.EncryptionHelper"
+      - "Riyadbank.MoreViewController"
+      - "Riyadbank.TokenListViewController"
+      - "Riyadbank.HomeScreenViewController"
+      - "Riyadbank.MainTabBarController"
+      - "Riyadbank.CustomTabBar"
+      - "Riyadbank.UIViewController"
+      - "Riyadbank.SettingsViewController"
+      - "Riyadbank.startViewController"
+      - "Riyadbank.AppDelegate"
+      - "Riyadbank.SceneDelegate" # Added for control flow obfuscation
+      - "Riyadbank.StExampleViewController" # Added for control flow obfuscation
+  runtime-protection:
+    jailbreak-detection: true
+    debugger-detection: true
+    hooking-detection: true
+    screenshot-protection: true
+  build:
+    environment: release
+    output: "${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.ixguard"
+
+
+
+
+# Add Run Script Phase:
+# Select your project in the Project Navigator, then select the Riyadbank SG target.
+# Go to the Build Phases tab.
+# Click the “+” button at the top left and choose New Run Script Phase.
+# Drag the new “Run Script” phase to appear after “Link Binary With Libraries” but before “Copy Bundle Resources”.
+# Run this script in release phase
+
+
+# if [ "${CONFIGURATION}" == "Release" ]; then
+#     /usr/local/bin/ixguard-cli --config "${SRCROOT}/Config/ixguard-config.yml" "${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}"
+# fi

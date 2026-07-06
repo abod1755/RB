@@ -1,0 +1,20 @@
+# macOS
+.DS_Store
+
+# Xcode user & build state
+xcuserdata/
+*.xcuserstate
+DerivedData/
+build/
+*.xcarchive
+
+# Build artifacts
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Secrets / credentials — never commit these
+File.txt
+*.mobileprovision
+*.p12
+*.certSigningRequest
